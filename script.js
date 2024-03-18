@@ -11,7 +11,6 @@ if (taskFromLocalStorage) {
   renderTask(myTask);
 }
 
-// localStorage.clear();
 saveBtn.addEventListener("click", function () {
   myTask.push(inputTask.value);
   inputTask.value = "";
@@ -32,7 +31,6 @@ function renderTask(task) {
 taskList.addEventListener("click", function (event) {
   setTimeout(function () {
     if (event.target.className === "close") {
-      // Get the text content of the li element (parent of the span)
       let selectedItem = event.target.parentElement.textContent
         .replace("X", "")
         .trim();
