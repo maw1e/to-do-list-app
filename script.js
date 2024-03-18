@@ -9,7 +9,6 @@ const taskFromLocalStorage = JSON.parse(localStorage.getItem("myTask"));
 if (taskFromLocalStorage) {
   myTask = taskFromLocalStorage;
   renderTask(myTask);
-  console.log(myTask);
 }
 
 // localStorage.clear();
@@ -31,8 +30,22 @@ function renderTask(task) {
 }
 
 taskList.addEventListener("click", function (event) {
-  if (event.target.tagName === "LI") {
-    event.target.classList.toggle("checked");
-  }
-  console.log("clicked");
+  setTimeout(function () {
+    if (event.target.className === "close") {
+      // Get the text content of the li element (parent of the span)
+      let selectedItem = event.target.parentElement.textContent
+        .replace("X", "")
+        .trim();
+      removeItemFromLocalStorage(selectedItem);
+    }
+  }, 500);
 });
+
+function removeItemFromLocalStorage(itemValue) {
+  let index = myTask.indexOf(itemValue);
+  if (index > -1) {
+    myTask.splice(index, 1);
+    localStorage.setItem("myTask", JSON.stringify(myTask));
+    renderTask(myTask);
+  }
+}

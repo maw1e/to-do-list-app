@@ -1,0 +1,112 @@
+$background-color: #fff67e;
+$primary-color: #bfea7c;
+$secondary-color: #416d19;
+$third-color: #609c28;
+$delete-color: #f44336;
+$font-main: "Whitney-Bold", sans-serif;
+$text-color: white;
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: $background-color;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $font-main;
+  width: auto;
+
+  .input {
+    #input-el {
+      height: 40px;
+      width: 500px;
+      padding-left: 12px;
+      border-radius: 10px;
+      border: 2px solid $secondary-color;
+    }
+  }
+  button {
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: $secondary-color;
+    color: $text-color;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  button:hover {
+    background-color: #609c28;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  width: 800px;
+  padding-top: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  height: auto;
+
+  h1 {
+    color: $secondary-color;
+  }
+}
+ul li {
+  margin-top: 20px;
+  padding: 10px 20px 10px 20px;
+  margin-left: 0px;
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  ul li:hover {
+    background: #ddd;
+  }
+  ul li.checked {
+    background: #f44336;
+    color: $text-color;
+    text-decoration: line-through;
+  }
+}
+
+#ul-el {
+  padding: 0px;
+}
+#taskList {
+  width: 700px;
+  background-color: #416d19;
+  color: white;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 20px 10px 20px;
+}
+
+.close:hover {
+  background-color: $delete-color;
+  color: $text-color;
+}
+.input {
+  margin: 20px;
+}
